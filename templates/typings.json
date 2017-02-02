@@ -1,0 +1,6 @@
+{
+  "name": "<%= serviceNameSlug %>-client",
+  "dependencies": {
+    "theon": "registry:npm/theon#0.1.28+20170201211546"
+  }
+}

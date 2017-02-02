@@ -1,0 +1,2 @@
+# <%= serviceNameSlug %>-client-javascript
+<%= appDescription %>

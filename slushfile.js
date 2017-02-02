@@ -64,23 +64,27 @@ gulp.task('default', function (done) {
   }];
     // Ask
   inquirer.prompt(prompts)
-  .then(function (answers) {
-    if (!answers.moveon) {
-      return done();
-    }
-    answers.appName = `${_.slugify(answers.serviceName)}-client-javascript`;
-    gulp.src(path.join(__dirname, 'templates', '**', '*'))
-      .pipe(template(answers))
-      .pipe(rename(function (file) {
-        if (file.basename[0] === '_') {
-          file.basename = '.' + file.basename.slice(1);
-        }
-      }))
-      .pipe(conflict('./'))
-      .pipe(gulp.dest('./'))
-      .pipe(install())
-      .on('end', function () {
-        done();
-      });
-  });
+    .then(function (answers) {
+      if (!answers.moveon) {
+        return done();
+      }
+      answers.serviceNameSlug = _.slugify(answers.serviceName);
+
+      gulp.src(path.join(__dirname, 'templates', '**', '*'))
+        .pipe(template(answers, { interpolate: /<%=([\s\S]+?)%>/g }))
+        .pipe(rename(function (file) {
+          if (file.basename[0] === '_') {
+            file.basename = '.' + file.basename.slice(1);
+          }
+          if (file.basename[0] === '$') {
+            file.basename = file.basename.slice(1);
+          }
+        }))
+        .pipe(conflict('./'))
+        .pipe(gulp.dest('./'))
+        .pipe(install())
+        .on('end', function () {
+          done();
+        });
+    });
 });
