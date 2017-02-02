@@ -1,0 +1,58 @@
+{
+  "name": "slush-groupby-client",
+  "description": "Slush generator for GroupBy API clients",
+  "version": "0.0.0-development",
+  "homepage": "https://github.com/groupby/slush-client",
+  "author": {
+    "name": "Ben Teichman",
+    "email": "ben.teichman@groupbyinc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/groupby/slush-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/groupby/slush-client/issues"
+  },
+  "license": "MIT",
+  "main": "slushfile.js",
+  "engines": {
+    "node": ">= 0.10.26",
+    "npm": ">=1.4.3"
+  },
+  "scripts": {
+    "start": "start-runner -f ./tasks.js",
+    "prepush": "yarn start prepush",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "release": {
+    "verifyConditions": "condition-circle"
+  },
+  "keywords": [
+    "slushgenerator"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "gulp": "^3.6.2",
+    "gulp-conflict": "^0.4.0",
+    "gulp-install": "^0.6.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-template": "^4.0.0",
+    "iniparser": "^1.0.5",
+    "inquirer": "^3.0.0",
+    "slush": ">=1.0.0",
+    "underscore.string": "^3.3.4"
+  },
+  "devDependencies": {
+    "condition-circle": "^1.5.0",
+    "cz-conventional-changelog": "^1.2.0",
+    "re-start": "^1.2.0",
+    "semantic-release": "^6.3.2",
+    "semistandard": "^9.2.1",
+    "start-simple-cli": "^4.1.1"
+  }
+}
