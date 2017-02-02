@@ -1,4 +1,4 @@
-# Slush Slush-groupby-client
+# Slush GroupBy Client
 
 [![npm](https://img.shields.io/npm/v/slush-groupby-client.svg?style=flat-square)](https://www.npmjs.com/package/slush-groupby-client)
 [![build](https://img.shields.io/circleci/project/github/groupby/slush-client/master.svg?label=linux&style=flat-square)](https://circleci.com/gh/groupby/slush-client)
