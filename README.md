@@ -1,5 +1,7 @@
 # Slush Slush-groupby-client
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/groupby/slush-client.svg?token=b5ef02c54d1b5c4608fc503a03ab0ed3588ad079fca7b6da13d92d6dffbde4e1)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/slush-groupby-client.svg?style=flat-square)](https://www.npmjs.com/package/slush-groupby-client)
 [![build](https://img.shields.io/circleci/project/github/groupby/slush-client/master.svg?label=linux&style=flat-square)](https://circleci.com/gh/groupby/slush-client)
 [![deps](https://david-dm.org/groupby/slush-client.svg?style=flat-square)](https://david-dm.org/groupby/slush-client)
