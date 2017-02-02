@@ -1,2 +1,2 @@
-# slush-groupby-client
+# slush-client
 Slush generator for GroupBy API clients
