@@ -12,7 +12,7 @@ var gulp = require('gulp');
 var conflict = require('gulp-conflict');
 var template = require('gulp-template');
 var rename = require('gulp-rename');
-var install = require('gulp-install');
+var yarn = require('gulp-yarn');
 var _ = require('underscore.string');
 var inquirer = require('inquirer');
 var path = require('path');
@@ -69,6 +69,7 @@ gulp.task('default', function (done) {
         return done();
       }
       answers.serviceNameSlug = _.slugify(answers.serviceName);
+      answers.serviceNameCamel = _.camelize(answers.serviceNameSlug);
 
       gulp.src(path.join(__dirname, 'templates', '**', '*'))
         .pipe(template(answers, { interpolate: /<%=([\s\S]+?)%>/g }))
@@ -82,7 +83,7 @@ gulp.task('default', function (done) {
         }))
         .pipe(conflict('./'))
         .pipe(gulp.dest('./'))
-        .pipe(install())
+        .pipe(yarn())
         .on('end', function () {
           done();
         });

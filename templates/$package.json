@@ -51,7 +51,7 @@
     "start-watch": "^2.0.0",
     "start-write": "^2.0.0",
     "tslint-config-groupby": "^1.0.0",
-    "typescript": "^2.1.5"
+    "typescript": "~2.1.5"
   },
   "dependencies": {
     "groupby-client-core": "^1.0.1"
